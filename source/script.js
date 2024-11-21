@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            const url = isLogin ? 'http://localhost:3000/login' : 'http://localhost:3000/register';
+            const url = isLogin ? 'https://cesarvigils.github.io/source/contact.html' : 'https://cesarvigils.github.io/source/contact.html';
             const data = { username, password };
             if (!isLogin) data.email = email;
 
@@ -99,14 +99,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Logout Button Handling
     const logoutBtn = document.getElementById('logout-btn');
     if (logoutBtn) {
         logoutBtn.addEventListener('click', async (event) => {
             event.preventDefault();
 
             try {
-                const response = await fetch('http://localhost:3000/logout', { method: 'POST' });
+                const response = await fetch('https://cesarvigils.github.io/source/logout', { method: 'POST' });
                 if (!response.ok) {
                     throw new Error('Error logging out');
                 }
@@ -125,7 +124,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Redirect if not authenticated
     if (window.location.pathname === '/portal') {
         const username = localStorage.getItem('username');
         const authToken = localStorage.getItem('authToken');
@@ -140,7 +138,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Handle Ticket Form Submission
     const ticketForm = document.getElementById('ticket-form');
     if (ticketForm) {
         ticketForm.addEventListener('submit', async (event) => {
